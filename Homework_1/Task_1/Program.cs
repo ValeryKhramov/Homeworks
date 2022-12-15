@@ -1,12 +1,12 @@
 ﻿using static System.Console;
 Clear();
 
-WriteLine("Сейчас мы найдем максимальное и минимальное значение из двух цифр.");
+WriteLine("Сейчас мы найдем максимальное и минимальное значение из двух чисел.");
 WriteLine("Введите первое число: ");
 int number_1 = int.Parse(ReadLine()!);
 
 WriteLine("Введите второе число: ");
-int number_2 = int.Parse(ReadLine());
+int number_2 = int.Parse(ReadLine()!);
 
 if (number_1 > number_2)
 {
