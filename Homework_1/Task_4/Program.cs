@@ -12,7 +12,7 @@ if (number >= 1)
     {
         if (count % 2 == 0)
         {
-            WriteLine(count);
+            Write($"{count} ");
         }
         count += 1; 
     }
