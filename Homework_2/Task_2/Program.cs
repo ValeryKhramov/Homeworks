@@ -6,7 +6,7 @@ int number = int.Parse(ReadLine());
 
 if (number >= 100)
 {
-    while (number >= 999)
+    while (number > 999)
     {
         number = number / 10;
     }
