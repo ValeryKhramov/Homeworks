@@ -20,5 +20,5 @@ Clear();
 
  double Distance = Math.Sqrt(Math.Pow((x1 - x), 2) + Math.Pow((y1 - y), 2) + Math.Pow((z1 - z), 2));
 
- WriteLine($"Distance between two points equal to {Distance}");
+ WriteLine($"Distance between two points equal to {Distance:f2}");
 
