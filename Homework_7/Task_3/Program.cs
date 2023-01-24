@@ -16,7 +16,8 @@ int[,] elements = GetMatrixArray(intParameters[0], intParameters[1]);
 PrintMatrixArray(elements);
 WriteLine();
 WriteLine("Arithmetic mean of each column: ");
-FindArithmeticMean(elements);
+double[] arithmeticMean = FindArithmeticMean(elements);
+PrintArray(arithmeticMean);
 
 
 
@@ -48,18 +49,29 @@ void PrintMatrixArray(int[,] inMatrix)
     }
 }
 
-void FindArithmeticMean(int[,] matrix)
+double[] FindArithmeticMean(int[,] matrix)
 {
-    int SumColumns =0;
+    int SumColumn =0;
+    int columns = 0;
+    double[] resultArray = new double[matrix.GetLength(1)];
     for (int j = 0; j < matrix.GetLength(1); j++)
     {
         for (int i = 0; i < matrix.GetLength(0); i++)
         {
-            SumColumns += matrix[i,j];
+            SumColumn += matrix[i,j];
         }
-        Write($"{(double)SumColumns/matrix.GetLength(1),5:f1} ");
-        SumColumns = 0;
-    }
-    
 
+        resultArray[columns] = (double)SumColumn / matrix.GetLength(0);
+        columns++;
+        SumColumn = 0;
+    }
+    return resultArray;
+
+}
+void PrintArray(double[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+    {
+       Write($"{array[i],5:f1} ");
+    }
 }
