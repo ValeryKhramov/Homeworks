@@ -5,3 +5,15 @@
 
 using static System.Console;
 Clear();
+
+Write("Enter integer number M and N by space: ");
+int[] parameters = Array.ConvertAll(ReadLine()!.Split(" ", StringSplitOptions.RemoveEmptyEntries), int.Parse);
+
+WriteLine($"Sum range from {parameters[0]} to {parameters[1]} = {GetSumRange(parameters[0], parameters[1])}");
+
+int GetSumRange(int startNum, int endNum)
+{     
+    if(startNum == endNum) return endNum;
+    if(startNum < endNum) return GetSumRange(startNum + 1, endNum) + startNum;
+    else return GetSumRange(startNum - 1, endNum) + startNum;
+}
