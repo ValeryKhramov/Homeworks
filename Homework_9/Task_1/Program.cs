@@ -5,3 +5,18 @@
 
 using static System.Console;
 Clear();
+
+Write("Enter integer number: ");
+
+if(!int.TryParse(ReadLine()!, out int number))
+{
+    WriteLine("Error. Entered not integer number.");
+    return;
+}
+
+WriteLine(PrintNumber(number));
+
+string PrintNumber(int num)
+{
+    return (num == 1)? num.ToString(): $"{num}, {PrintNumber(num - 1)}";
+}
